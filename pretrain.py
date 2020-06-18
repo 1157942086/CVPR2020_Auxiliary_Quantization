@@ -33,6 +33,7 @@ parser.add_argument('--weights_dir', type=str, default='./weights/', help='save 
 parser.add_argument('--pretrained', action='store_true', default=True, help='load pretrained pytorch weights')
 parser.add_argument('--bitW', type=int, default=32, help='weight precision')
 parser.add_argument('--bitA', type=int, default=32, help='activation precision')
+parser.add_argument('--learning_step', type=list, default=[10,15,20], help='learning rate steps')
 
 
 args = parser.parse_args()
@@ -105,7 +106,7 @@ def main():
                 momentum=args.momentum,
                 weight_decay=args.weight_decay,
                 nesterov=True)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, [10,15,20])
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, args.learning_step)
 
     # define the binarization operator
 
