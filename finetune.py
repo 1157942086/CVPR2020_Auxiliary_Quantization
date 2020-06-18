@@ -25,12 +25,13 @@ parser.add_argument('--learning_rate', type=float, default=1e-3, help='init lear
 parser.add_argument('--momentum', type=float, default=0.9, help='momentum')
 parser.add_argument('--report_freq', type=float, default=100, help='report frequency')
 parser.add_argument('--weight_decay', type=float, default=1e-4, help='weight decay')
-parser.add_argument('--epochs', type=int, default=25, help='num of training epochs')
+parser.add_argument('--epochs', type=int, default=30, help='num of training epochs')
 parser.add_argument('--save', type=str, default='EXP', help='experiment name')
 parser.add_argument('--resume_train', action='store_true', default=False, help='resume training')
 parser.add_argument('--resume_dir', type=str, default='./weights/checkpoint.pth.tar', help='save weights directory')
 parser.add_argument('--weights_dir', type=str, default='./weights/', help='save weights directory')
-parser.add_argument('--learning_step', type=list, default=[15,20,25], help='learning rate steps')
+parser.add_argument('--pretrained', action='store_true', default=False, help='load pretrained pytorch weights'
+parser.add_argument('--learning_step', type=list, default=[15,25,30], help='learning rate steps')
 parser.add_argument('--bitW', type=int, default=2, help='weight precision')
 parser.add_argument('--bitA', type=int, default=2, help='activation precision')
 
