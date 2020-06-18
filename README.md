@@ -24,9 +24,11 @@ For fine-tuning, run python finetune.py
 
 ## Pretrained models
 
-ResNet-50: https://mega.nz/file/6UphgD5I#TNGA1TSkjjogeQTfxKegqhhxSepccOhITiaLJwyzBVg
+For 2-bit ResNet-50 with DoReFa-Net, we achieve 74.0% Top-1 accuracy.
 
-More pretrained models will be made available.
+The ResNet-50 pretrained model can be downloaded at: https://mega.nz/file/6UphgD5I#TNGA1TSkjjogeQTfxKegqhhxSepccOhITiaLJwyzBVg
+
+More pretrained models will be made available soon.
 
 ## Copyright
 
