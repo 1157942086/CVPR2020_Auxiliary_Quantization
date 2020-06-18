@@ -30,6 +30,7 @@ parser.add_argument('--save', type=str, default='EXP', help='experiment name')
 parser.add_argument('--resume_train', action='store_true', default=False, help='resume training')
 parser.add_argument('--resume_dir', type=str, default='./weights/checkpoint.pth.tar', help='save weights directory')
 parser.add_argument('--weights_dir', type=str, default='./weights/', help='save weights directory')
+parser.add_argument('--pretrained', action='store_true', default=True, help='load pretrained pytorch weights')
 parser.add_argument('--bitW', type=int, default=32, help='weight precision')
 parser.add_argument('--bitA', type=int, default=32, help='activation precision')
 
@@ -70,8 +71,8 @@ def main():
     batch_size = args.batch_size
 
 
-    train_dataset = datasets.folder.ImageFolder(root='/data/train/', transform=train_transform)
-    test_dataset = datasets.folder.ImageFolder(root='/data/val/', transform=test_transform)
+    train_dataset = datasets.folder.ImageFolder(root='/data/imagenet/train/', transform=train_transform)
+    test_dataset = datasets.folder.ImageFolder(root='/data/imagenet/val/', transform=test_transform)
 
  
 
@@ -89,7 +90,7 @@ def main():
     n_train_batches = math.floor(num_train / batch_size)
 
     criterion = nn.CrossEntropyLoss().cuda()
-    model = resnet50(args, pretrained=True)
+    model = resnet50(args)
     model = utils.dataparallel(model, 4)
 
 
