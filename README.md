@@ -17,9 +17,9 @@ This project hosts the code for implementing the algorithms as presented in our 
 
 
 ````
-For joint knowledge distillation on quantization, run python pretrain.py --bitW 32 --bitA 32
-For fine-tuning, run python finetune.py
+For joint knowledge distillation on quantization, run  python pretrain.py --bitW 32 --bitA 32
 
+For fine-tuning, run python finetune.py
 ````
 
 ## Pretrained models
