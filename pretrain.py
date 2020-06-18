@@ -68,8 +68,8 @@ def main():
     batch_size = args.batch_size
 
 
-    train_dataset = datasets.folder.ImageFolder(root='/fast/users/a1675776/data/imagenet-pytorch/train/', transform=train_transform)
-    test_dataset = datasets.folder.ImageFolder(root='/fast/users/a1675776/data/imagenet-pytorch/val/', transform=test_transform)
+    train_dataset = datasets.folder.ImageFolder(root='/data/train/', transform=train_transform)
+    test_dataset = datasets.folder.ImageFolder(root='/data/val/', transform=test_transform)
 
  
 
@@ -87,9 +87,7 @@ def main():
     n_train_batches = math.floor(num_train / batch_size)
 
     criterion = nn.CrossEntropyLoss().cuda()
-    bitW = 32
-    bitA = 32
-    model = resnet50(bitW, bitA, pretrained=True)
+    model = resnet50(args, pretrained=True)
     model = utils.dataparallel(model, 4)
 
 
