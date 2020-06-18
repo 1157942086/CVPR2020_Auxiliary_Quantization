@@ -30,6 +30,8 @@ parser.add_argument('--save', type=str, default='EXP', help='experiment name')
 parser.add_argument('--resume_train', action='store_true', default=False, help='resume training')
 parser.add_argument('--resume_dir', type=str, default='./weights/checkpoint.pth.tar', help='save weights directory')
 parser.add_argument('--weights_dir', type=str, default='./weights/', help='save weights directory')
+parser.add_argument('--bitW', type=int, default=32, help='weight precision')
+parser.add_argument('--bitA', type=int, default=32, help='activation precision')
 
 
 args = parser.parse_args()
