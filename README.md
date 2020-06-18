@@ -17,7 +17,7 @@ This project hosts the code for implementing the algorithms as presented in our 
 
 
 ````
-For pretraining, run python pretrain.py --bitW 32 --bitA 32
+For pretraining, run python pretrain.py
 
 For fine-tuning, run python finetune.py
 ````
