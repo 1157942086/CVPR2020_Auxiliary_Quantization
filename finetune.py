@@ -90,9 +90,7 @@ def main():
     n_train_batches = math.floor(num_train / batch_size)
 
     criterion = nn.CrossEntropyLoss().cuda()
-    bitW = 2
-    bitA = 2
-    model = resnet50(bitW, bitA, pretrained=True)
+    model = resnet50(args)
     model = utils.dataparallel(model, 4)
 
 
