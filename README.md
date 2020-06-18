@@ -24,7 +24,7 @@ For fine-tuning, run python finetune.py
 
 ## Pretrained models
 
-For 2-bit ResNet-50 with DoReFa-Net, we achieve 74.0% Top-1 accuracy, where the 32-bit Top-1 accuracy is 76.1%.
+For 2-bit ResNet-50 with DoReFa-Net, we achieve 74.0% Top-1 accuracy on ImageNet, where the 32-bit Top-1 accuracy is 76.1%.
 
 The ResNet-50 pretrained model can be downloaded at: https://mega.nz/file/6UphgD5I#TNGA1TSkjjogeQTfxKegqhhxSepccOhITiaLJwyzBVg
 
