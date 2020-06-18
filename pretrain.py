@@ -15,7 +15,6 @@ from model import resnet50
 import utils
 from utils import adjust_learning_rate, save_checkpoint
 import numpy as np
-from random import shuffle
 
 
 parser = argparse.ArgumentParser("ImageNet")
