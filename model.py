@@ -212,7 +212,7 @@ def resnet50(args, **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], args.bitW, args.bitA, **kwargs)
     if args.resume_train:
         return model
-    elif pretrained == True:
+    elif args.pretrained == True:
         load_dict = model_zoo.load_url(model_urls['resnet50'])
     else:
         load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
