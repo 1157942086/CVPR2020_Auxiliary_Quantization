@@ -22,7 +22,7 @@ def normalization_on_weights(x):
 
 
 def normalization_on_activations(x):
-    return F.relu6(x)    # we clip to [0,6] instead rather than [0,1]
+    return F.relu6(x)    # we clip activations to [0,6] instead rather than [0,1]
  
 
 class SignMeanRoundFunction(Function):
@@ -60,10 +60,9 @@ class QConv2d(nn.Conv2d):
             padding, dilation, groups, bias)
 
         self.k = k
-        self.quantized = True
 
     def forward(self, input):
-        if self.quantized:
+        if self.k != 32:
             normalized_weight = normalization_on_weights(self.weight)
             quantized_weight = 2 * quantization(normalized_weight, self.k) - 1
 
@@ -89,10 +88,9 @@ class QLinear(nn.Linear):
                                       out_features=out_features, bias=bias)
 
         self.k = k
-        self.quantized = True
 
     def forward(self, input):
-        if self.quantized:
+        if self.k != 32:
             normalized_weight = normalization_on_weights(self.weight)
             quantized_weight = 2 * quantization(normalized_weight, self.k) - 1
 
@@ -115,12 +113,11 @@ class QReLU(nn.ReLU):
         super(QReLU, self).__init__(inplace=inplace)
    
         self.k = k
-        self.quantized = True
 
     def forward(self, input):
 
         out = normalization_on_activations(input)
-        if self.quantized:
+        if self.k != 32:
             return quantization(out, self.k)
         else:
             return out
