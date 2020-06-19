@@ -1,4 +1,4 @@
-# 
+# Training Quantized Neural Networks with a Full-precision Auxiliary Module
 
 This project hosts the code for implementing the algorithms as presented in our papers:
 
@@ -12,6 +12,7 @@ This project hosts the code for implementing the algorithms as presented in our 
 }
 
 ````
+The full paper is available at: https://arxiv.org/abs/1903.11236.
 
 ## Training and testing
 
