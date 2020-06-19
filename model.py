@@ -180,7 +180,7 @@ def resnet18(args, **kwargs):
     model = ResNet(BasicBlock, [2, 2, 2, 2], args.bitW, args.bitA, **kwargs)
     if args.resume_train:
         return model
-    elif args.pretrained == True:
+    elif args.pretrained:
         load_dict = model_zoo.load_url(model_urls['resnet18'])
     else:
         load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
@@ -196,7 +196,7 @@ def resnet34(args, **kwargs):
     model = ResNet(BasicBlock, [3, 4, 6, 3], args.bitW, args.bitA, **kwargs)
     if args.resume_train:
         return model
-    elif args.pretrained == True:
+    elif args.pretrained:
         load_dict = model_zoo.load_url(model_urls['resnet34'])
     else:
         load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
@@ -212,7 +212,7 @@ def resnet50(args, **kwargs):
     model = ResNet(Bottleneck, [3, 4, 6, 3], args.bitW, args.bitA, **kwargs)
     if args.resume_train:
         return model
-    elif args.pretrained == True:
+    elif args.pretrained:
         load_dict = model_zoo.load_url(model_urls['resnet50'])
     else:
         load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
