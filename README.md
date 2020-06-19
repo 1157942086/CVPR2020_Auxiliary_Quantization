@@ -16,9 +16,10 @@ The full paper is available at: https://arxiv.org/abs/1903.11236.
 
 ## Training and testing
 
+We first pre-train the 32-bit model and then fine-tune from it.
 
 ````
-For pretraining, run python pretrain.py
+For pre-training, run python pretrain.py
 
 For fine-tuning, run python finetune.py
 ````
