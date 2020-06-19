@@ -172,7 +172,7 @@ class ResNet(nn.Module):
         return x, booster
 
 
-def resnet18(bitW, bitA, pretrained=False, **kwargs):
+def resnet18(args, **kwargs):
     """Constructs a ResNet-18 model.
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
@@ -188,7 +188,7 @@ def resnet18(bitW, bitA, pretrained=False, **kwargs):
     return model
 
 
-def resnet34(args, pretrained=False, **kwargs):
+def resnet34(args, **kwargs):
     """Constructs a ResNet-34 model.
     Args:
         pretrained (bool): If True, returns a model pre-trained on ImageNet
