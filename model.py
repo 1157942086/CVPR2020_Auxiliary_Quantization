@@ -183,7 +183,7 @@ def resnet18(bitW, bitA, pretrained=False, **kwargs):
     elif args.pretrained == True:
         load_dict = model_zoo.load_url(model_urls['resnet18'])
     else:
-        load_dict = torch.load('./full_precision_weights/weights/model_best.pth.tar')['state_dict'] 
+        load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
     load_state_dict(model, load_dict) 
     return model
 
@@ -199,7 +199,7 @@ def resnet34(args, pretrained=False, **kwargs):
     elif args.pretrained == True:
         load_dict = model_zoo.load_url(model_urls['resnet34'])
     else:
-        load_dict = torch.load('./full_precision_weights/weights/model_best.pth.tar')['state_dict'] 
+        load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
     load_state_dict(model, load_dict) 
     return model
 
@@ -215,6 +215,6 @@ def resnet50(args, **kwargs):
     elif pretrained == True:
         load_dict = model_zoo.load_url(model_urls['resnet50'])
     else:
-        load_dict = torch.load('./full_precision_weights/weights/model_best.pth.tar')['state_dict'] 
+        load_dict = torch.load('./full_precision_weights/model_best.pth.tar')['state_dict'] 
     load_state_dict(model, load_dict) 
     return model
