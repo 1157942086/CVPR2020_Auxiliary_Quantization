@@ -22,8 +22,8 @@ def normalization_on_weights(x):
 
 
 def normalization_on_activations(x):
-    return F.relu6(x)
-
+    return F.relu6(x)    # we clip to [0,6] instead rather than [0,1]
+ 
 
 class SignMeanRoundFunction(Function):
 
